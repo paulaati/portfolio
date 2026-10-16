@@ -7,220 +7,250 @@
   <meta name="description" content="Spanish designer based in Madrid, focused on solving real problems through research, design thinking and thoughtful experiences.">
   <meta property="og:title" content="Paula Atienza · UX/UI Designer">
   <meta property="og:description" content="Spanish designer based in Madrid, focused on solving real problems through research, design thinking and thoughtful experiences.">
-  <meta property="og:image" content="https://framerusercontent.com/assets/ORNxKcnFuzeMsHLEPevlHvAayuA.png">
+  <meta property="og:image" content="assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/logo-pam.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;600;700&family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/pp-neue-montreal-medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/polysans-median.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="nav">
-    <a class="nav__logo" href="#top" aria-label="PAM, back to top">PAM</a>
+  <header class="nav" id="top">
+    <a class="nav__logo" href="#top" aria-label="PAM, back to top">
+      <img src="assets/img/logo-pam.svg" alt="" width="38" height="38">
+      <span class="nav__name">P<span>AM</span></span>
+    </a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
     <nav aria-label="Main">
-      <ul class="nav__links">
+      <ul class="nav__links" id="nav-links">
         <li><a href="#experience">Experience</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav__contact" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <p class="eyebrow">UX/UI Designer · Madrid</p>
-      <h1 class="hero__title">Paula Atienza<span class="dot">.</span></h1>
-      <p class="hero__lead">Solving real problems through research, design thinking and thoughtful experiences.</p>
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="wrap">
+        <h2 class="section-title">Experience</h2>
+
+        <article class="role">
+          <div class="role__side">
+            <img class="role__logo" src="assets/logos/ikea.svg" alt="IKEA" width="119" height="46">
+            <p class="role__date">2025-Present</p>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">UX/UI Designer<span class="role__company"> at IKEA</span></h3>
+            <p class="role__date role__date--mobile">2025-Present</p>
+            <p>Working within the IKEA for Business digital team, contributing to end-to-end product design across research, interaction design and accessibility.</p>
+          </div>
+          <p class="role__sub">Some projects</p>
+          <div class="projects" data-projects>
+            <div class="projects__track">
+              <div class="project">
+                <h4>AI Projects Hub</h4>
+                <p class="project__metric">+1500 projects created</p>
+                <p>Partnered with Google on an AI-powered experience that lets B2B customers generate fully furnished spaces. Designed the flow and built the furniture logic database and content foundation other teams needed to implement the solution, bridging design decisions with technical needs. +1,500 projects created in four months.</p>
+                <p class="project__note">*Project details are under NDA. Happy to walk through process and outcomes in an interview.</p>
+              </div>
+              <div class="project">
+                <h4>Navigation</h4>
+                <p class="project__metric">31 markets · 4M users</p>
+                <p>Led the end-to-end research and redesign of the IKEA for Business web navigation, from exploration to detailed content structure, in close collaboration with other teams. Validated the redesign through user interviews backed by quantitative and qualitative data. Now live across 31 markets, delivering impact to 4M users.</p>
+                <p class="project__note">*Project details are under NDA. Happy to walk through process and outcomes in an interview.</p>
+              </div>
+              <div class="project">
+                <h4>Amsterdam GAAD</h4>
+                <p class="project__metric">350K users impacted</p>
+                <p>Led an accessibility audit of the IKEA platform, identifying barriers for low-vision users. Volunteered to travel to Amsterdam for Global Accessibility Awareness Day to run and moderate research sessions with visually impaired users, leading them in English. Turned every conversation into insights the IKEA teams could act on.</p>
+                <p class="project__note">*Project details are under NDA. Happy to walk through process and outcomes in an interview.</p>
+              </div>
+            </div>
+            <button class="projects__next" aria-label="Next project">
+              <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><circle cx="14" cy="14" r="14"/><path d="M12 9l5 5-5 5"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role__side">
+            <img class="role__logo" src="assets/logos/amazon.svg" alt="Amazon" width="118" height="35">
+            <p class="role__date">2023-2024</p>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">FC Warehouse Associate<span class="role__company"> at Amazon</span></h3>
+            <p class="role__date role__date--mobile">2023-2024</p>
+            <p>Customer review analysis to identify satisfaction patterns and areas for improvement, contributing to a more intuitive and curated product catalogue. Cross-functional collaboration to streamline operational processes, applying a problem-solving mindset rooted in user feedback analysis.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role__side">
+            <img class="role__logo" src="assets/logos/innocard.svg" alt="InnoCard" width="118" height="39">
+            <p class="role__date">2022</p>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">Visual and Graphic Designer<span class="role__company"> at InnoCard</span></h3>
+            <p class="role__date role__date--mobile">2022</p>
+            <p>Design of branded cards and graphic materials to ensure a consistent and appealing visual identity. Creation of visually effective presentations and development of the company's website in Webflow, focusing on usability, accessibility and a seamless user experience.</p>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role__side">
+            <img class="role__logo" src="assets/logos/vitra.svg" alt="Vitra" width="118" height="39">
+            <p class="role__date">2021</p>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">Customer Experience Specialist<span class="role__company"> at Vitra</span></h3>
+            <p class="role__date role__date--mobile">2021</p>
+            <p>Guidance of customers through the product selection journey, ensuring a smooth and intuitive in-store experience. Collaboration with internal teams to enhance the visual presentation of products and optimise the showroom's navigation flow, while analysing customer needs to deliver personalised solutions that improved conversion.</p>
+          </div>
+        </article>
+
+        <div class="center">
+          <a class="pill" href="https://www.notion.so/paulapam/Paula-Atienza-CV-Resume-1b012947503b80f1a808ea06bfb24ad9?source=copy_link" target="_blank" rel="noopener">View resume</a>
+        </div>
+      </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <h2 class="section__title">Experience</h2>
-
-      <article class="role role--featured">
-        <header class="role__head">
-          <h3>UX/UI Designer at IKEA</h3>
-          <span class="role__date">2025–Present</span>
-        </header>
-        <p>Working within the IKEA for Business digital team, contributing to end-to-end product design across research, interaction design and accessibility.</p>
-
-        <h4 class="role__sub">Some projects</h4>
-        <div class="projects">
-          <div class="project">
-            <p class="project__metric">31 markets · 4M users</p>
-            <h5>Navigation</h5>
-            <ul>
-              <li>Led the end-to-end research and redesign of the IKEA for Business web navigation, from exploration to detailed content structure, in collaboration with other teams.</li>
-              <li>Validated the redesign through user interviews backed by quantitative and qualitative data.</li>
-              <li>Now live across 31 markets, delivering impact to 4M users.</li>
-            </ul>
-            <p class="project__note">Project visuals are under NDA. Happy to walk through process and outcomes in an interview.</p>
-          </div>
-          <div class="project">
-            <p class="project__metric">350K users impacted</p>
-            <h5>Amsterdam GAAD</h5>
-            <ul>
-              <li>Led an accessibility audit of the IKEA platform, identifying barriers for low-vision users.</li>
-              <li>Volunteered to travel to Amsterdam for Global Accessibility Awareness Day to run and moderate research sessions with visually impaired users, in English.</li>
-              <li>Turned every conversation into insights the IKEA teams could act on.</li>
-            </ul>
-          </div>
-          <div class="project">
-            <p class="project__metric">+1500 projects created</p>
-            <h5>AI Projects Hub</h5>
-            <ul>
-              <li>Partnered with Google on an AI-powered experience that lets B2B customers generate fully furnished spaces.</li>
-              <li>Designed the flow and built the furniture logic database and content foundation other teams needed, bridging design and technical needs.</li>
-              <li>+1,500 projects created in four months.</li>
-            </ul>
-          </div>
+    <!-- COMPANIES -->
+    <section class="companies" aria-label="Some companies I have worked with">
+      <p class="companies__label">Some companies I have worked with</p>
+      <div class="marquee">
+        <div class="marquee__track">
+          <ul class="marquee__group">
+            <li><img src="assets/logos/gray-glow-grow.svg" alt="Glow Grow" width="171" height="25"></li>
+            <li><img src="assets/logos/gray-ikea.svg" alt="IKEA" width="153" height="60"></li>
+            <li><img src="assets/logos/gray-vitra.svg" alt="Vitra" width="91" height="30"></li>
+            <li><img src="assets/logos/gray-ufv.svg" alt="UFV" width="145" height="50"></li>
+            <li><img src="assets/logos/gray-moeve.svg" alt="Moeve" width="125" height="23"></li>
+            <li><img src="assets/logos/gray-innocard.svg" alt="InnoCard" width="117" height="38"></li>
+            <li><img src="assets/logos/gray-amazon.svg" alt="Amazon" width="119" height="36"></li>
+            <li><img src="assets/logos/gray-google-airport.svg" alt="Google Airport" width="190" height="29"></li>
+          </ul>
         </div>
-      </article>
-
-      <article class="role">
-        <header class="role__head">
-          <h3>FC Warehouse Associate at Amazon</h3>
-          <span class="role__date">2023–2024</span>
-        </header>
-        <ul>
-          <li>Customer review analysis to identify satisfaction patterns and areas for improvement, contributing to a more intuitive, curated product catalogue.</li>
-          <li>Cross-functional collaboration to streamline operational processes, with a problem-solving approach grounded in user feedback.</li>
-        </ul>
-      </article>
-
-      <article class="role">
-        <header class="role__head">
-          <h3>Visual Designer at InnoCard</h3>
-          <span class="role__date">2022</span>
-        </header>
-        <ul>
-          <li>Design of branded cards and graphic materials to ensure a consistent and appealing visual identity.</li>
-          <li>Creation of visually effective presentations and development of the company's website in Webflow, focused on usability, accessibility and user experience.</li>
-        </ul>
-      </article>
-
-      <article class="role">
-        <header class="role__head">
-          <h3>Customer Experience Specialist at Vitra</h3>
-          <span class="role__date">2021</span>
-        </header>
-        <ul>
-          <li>Guidance of customers through the product selection journey, ensuring a smooth and intuitive in-store experience.</li>
-          <li>Collaboration with internal teams to enhance the visual presentation of products, improving showroom navigation, customer needs analysis and conversion.</li>
-        </ul>
-      </article>
-
-      <a class="btn btn--ghost" href="https://www.notion.so/paulapam/Paula-Atienza-CV-Resume-1b012947503b80f1a808ea06bfb24ad9?source=copy_link" target="_blank" rel="noopener">View resume ↗</a>
-
-      <div class="companies">
-        <h4 class="role__sub">Some companies I have worked with</h4>
-        <ul class="companies__list">
-          <li>IKEA</li><li>Google</li><li>Amazon</li><li>InnoCard</li><li>Vitra</li>
-        </ul>
       </div>
     </section>
 
     <!-- WORK -->
-    <section class="section" id="work">
-      <h2 class="section__title">Selected work</h2>
-      <div class="work-grid">
-        <a class="card" href="https://medium.com/@paulapam/designing-the-identity-of-tortilla-club-from-brief-to-brand-4eb2062ee1d0" target="_blank" rel="noopener">
-          <div class="card__media"><video src="https://framerusercontent.com/assets/5jiUinWIkKiIAl8IHXtGi8e1YMQ.mp4" autoplay muted loop playsinline aria-hidden="true"></video></div>
-          <div class="card__meta"><span>8 min read</span><span>3 months</span></div>
-          <h3>TORTILLA CLUB: Visual identity journey</h3>
-          <p>Did you know Spain's first recorded omelette dates back to 1798? We transformed this Extremaduran heritage into a contemporary cultural icon, documenting the process from historical research to packaging.</p>
-          <span class="card__cta">View project ↗</span>
-        </a>
-        <a class="card" href="https://medium.com/@paulapam/living-in-6-sqm-a-real-challenge-for-mobility-9da42b6fc743" target="_blank" rel="noopener">
-          <div class="card__media"><video src="https://framerusercontent.com/assets/jpMIIHiil8tlsdJLXsH2ewrgFo.mp4" autoplay muted loop playsinline aria-hidden="true"></video></div>
-          <div class="card__meta"><span>9 min read</span><span>2 weeks</span></div>
-          <h3>Trucker: Humanizing the long-haul mobility</h3>
-          <p>A deep dive into ethnographic research by spending a full day inside a 6 sqm cabin with a truck driver. This case study documents the entire UX process, showing how raw field insights were structured into an accessible design framework.</p>
-          <span class="card__cta">View project ↗</span>
-        </a>
-        <a class="card" href="https://medium.com/@paulapam/what-if-plants-could-replace-light-bulbs-our-lean-process-to-find-out-1e210340f9ae" target="_blank" rel="noopener">
-          <div class="card__media"><video src="https://framerusercontent.com/assets/mSPq5BSp6Odlm8k1pvSdVQlWFps.mp4" autoplay muted loop playsinline aria-hidden="true"></video></div>
-          <div class="card__meta"><span>9 min read</span><span>1 month</span></div>
-          <h3>Glow Grow: From concept to validated MVP</h3>
-          <p>What if a plant could light up a space without electricity? That question sparked Glow Grow, a bioluminescent lamp concept designed from the ground up. The MVP was validated with real KPIs within 24 hours and awarded 1st place as Best Lean Initiative.</p>
-          <span class="card__cta">View project ↗</span>
-        </a>
-        <a class="card" href="https://medium.com/@paulapam/how-we-used-design-thinking-to-transform-airport-experience-c5435c18fea1" target="_blank" rel="noopener">
-          <div class="card__media"><video src="https://framerusercontent.com/assets/sGjdfcG99Ht0tbkFRpncWo8KIs.mp4" autoplay muted loop playsinline aria-hidden="true"></video></div>
-          <div class="card__meta"><span>7 min read</span><span>3 weeks</span></div>
+    <section class="work" id="work">
+      <h2 class="section-title">Selected work</h2>
+      <div class="work__list">
+        <article class="card">
+          <video class="card__media" src="assets/video/google-airport.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+          <p class="card__meta">7 min read <span>·</span> 3 weeks of work</p>
           <h3>Google Airport: A design thinking case study</h3>
           <p>Data showed that 65% of passengers get lost before boarding. This project showcases the end-to-end UX process, turning field research into a user-centered navigation ecosystem.</p>
-          <span class="card__cta">View project ↗</span>
-        </a>
+          <a class="pill" href="https://medium.com/@paulapam/how-we-used-design-thinking-to-transform-airport-experience-c5435c18fea1" target="_blank" rel="noopener">View project</a>
+        </article>
+        <article class="card">
+          <video class="card__media" src="assets/video/glow-grow.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+          <p class="card__meta">9 min read <span>·</span> 1 month of work</p>
+          <h3>Glow Grow: From concept to validated MVP</h3>
+          <p>What if a plant could light up a space without electricity? That question sparked Glow Grow, a bioluminescent lamp concept designed from the ground up: user research, visual identity, design system, landing page and omnichannel communication strategy. The MVP was validated with real KPIs within 24 hours and awarded 1st place as Best Lean Initiative.</p>
+          <a class="pill" href="https://medium.com/@paulapam/what-if-plants-could-replace-light-bulbs-our-lean-process-to-find-out-1e210340f9ae" target="_blank" rel="noopener">View project</a>
+        </article>
+        <article class="card">
+          <video class="card__media" src="assets/video/trucker.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+          <p class="card__meta">9 min read <span>·</span> 2 weeks of work</p>
+          <h3>Trucker: Humanizing the long-haul mobility</h3>
+          <p>A deep dive into ethnographic research by spending a full day inside a 6 sqm cabin with a truck driver. This case study documents the entire UX process, showing how raw field insights were structured into a accessible design framework.</p>
+          <a class="pill" href="https://medium.com/@paulapam/living-in-6-sqm-a-real-challenge-for-mobility-9da42b6fc743" target="_blank" rel="noopener">View project</a>
+        </article>
+        <article class="card">
+          <video class="card__media" src="assets/video/tortilla-club.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+          <p class="card__meta">8 min read <span>·</span> 3 months of work</p>
+          <h3>TORTILLA CLUB: Visual identity journey</h3>
+          <p>Did you know Spain’s first recorded omelette dates back to 1798? We transformed this Extremaduran heritage into a contemporary cultural icon, documenting our entire process from historical research to bespoke packaging.</p>
+          <a class="pill" href="https://medium.com/@paulapam/designing-the-identity-of-tortilla-club-from-brief-to-brand-4eb2062ee1d0" target="_blank" rel="noopener">View project</a>
+        </article>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section about" id="about">
-      <h2 class="section__title">About</h2>
-      <div class="about__grid">
-        <figure class="about__photo">
-          <img src="https://framerusercontent.com/images/91tpMDnjdptDl8IDbFPBxeSIGQ.jpg?scale-down-to=1024" alt="Paula Atienza" loading="lazy">
-        </figure>
-        <div class="about__text">
-          <p class="about__hello">Hi! I'm Paula Atienza.</p>
-          <p>I'm a designer based in Madrid, originally from a small town in Extremadura. My work lives at the intersection of digital product design, interior design, branding and typography.</p>
-          <p>Throughout my career, I've had the opportunity to lead impactful projects across Europe, with key experiences in Amsterdam. My portfolio spans from strategic design for global industry leaders like IKEA to user-centric product work for Spanish startups like InnoCard.</p>
-          <p>Beyond corporate work, I am involved in the design and tech ecosystem: I support Technovation Girls, write for UX Planet on Medium, and run “typocean”, a project documenting local commercial logotypes.</p>
-          <p>As a small footnote, that same curiosity for detail led me to graduate with 8 academic distinctions during my double degree. A dedication to rigor that I now bring to every digital and physical space I design.</p>
-          <p>If you'd like to discuss a project or interview opportunities, feel free to <a href="#contact">drop me a line!</a></p>
-        </div>
-      </div>
-
-      <div class="readings">
-        <div class="readings__head">
-          <div>
-            <h3>Curated readings</h3>
-            <p>Keep an eye out because I will be updating them regularly</p>
-          </div>
-          <div class="readings__arrows">
-            <button class="arrow" data-dir="-1" aria-label="Previous readings">←</button>
-            <button class="arrow" data-dir="1" aria-label="Next readings">→</button>
+    <section class="about" id="about">
+      <div class="wrap">
+        <h2 class="section-title">About</h2>
+        <div class="about__grid">
+          <figure class="about__photo">
+            <img src="assets/img/paula.jpg" alt="Paula Atienza in front of a snowy mountain town at sunset" width="1024" height="1008" loading="lazy">
+            <figcaption class="about__tag"><img src="assets/img/cursor.svg" alt="" width="24" height="26"><span>Paula Atienza</span></figcaption>
+          </figure>
+          <div class="about__text">
+            <p>Hi! I'm Paula Atienza. I’m a designer based in Madrid, originally from a small town in Extremadura. My work lives at the intersection of digital product design, interior design, branding and typography.</p>
+            <p>Throughout my career, I’ve had the opportunity to lead impactful projects across Europe, including key professional experiences in Amsterdam. My portfolio spans from strategic design for global industry leaders like IKEA to user-centric product for spanish startups like InnoCard.</p>
+            <p>Beyond corporate work, I am involved in the design and tech ecosystem: I actively participate and <strong>support initiatives like Technovation Girls</strong> to promote women in tech, write for <strong>UX Planet on Medium</strong> and run <strong>"typocean"</strong>, a personal project focused on documenting local commercial logotypes to build design culture and preserve typographic history.</p>
+            <p>As a small footnote, that same curiosity for detail led me to graduate with 8 academic distinctions during my double degree. A dedication to rigor that I now bring to every digital and physical space I design.</p>
+            <p>If you'd like to discuss a project or interview opportunities, feel free to <a href="#contact"><strong>drop me a line</strong></a>!</p>
           </div>
         </div>
-        <ul class="readings__track" tabindex="0" aria-label="Book covers">
-          <li><img src="https://framerusercontent.com/images/xiqwAqSadcWXXjwKCCJTED6w8.jpg" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/xUkxUJ4hqPpCo0iFnaJmYEj2tk.jpg?scale-down-to=512" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/r7pGtj5oUXnmWttndcI8FU7Rs6E.jpg?scale-down-to=512" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/VUDO0x8lEhUXG9XsSOT6HwZqMQw.png" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/QnjvFJOwgdwcGHclMhLn5BX8rk.jpg?scale-down-to=512" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/g8Qf7nNFxZ2uPFx9GI4ML30oeBU.jpg" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/8FdC4PWUvifXuiqTsbShp7a6ELI.jpg?scale-down-to=512" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/Gd1MNJ8In8nn86A0A7sHhYrPLY.jpg?scale-down-to=512" alt="Book cover" loading="lazy"></li>
-          <li><img src="https://framerusercontent.com/images/VRl4tDZvz6hURfuK8lzUnsX8k.jpg?scale-down-to=512" alt="Book cover" loading="lazy"></li>
-        </ul>
       </div>
     </section>
 
+    <!-- READINGS -->
+    <section class="readings" aria-labelledby="readings-title">
+      <h2 class="section-title" id="readings-title">Curated readings</h2>
+      <p class="readings__lead">Keep an eye out because I will be updating them regularly</p>
+      <ul class="readings__track" tabindex="0" aria-label="Book covers">
+        <li><img src="assets/books/book-1.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-2.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-3.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-4.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-5.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-6.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-7.jpg" alt="Book cover" loading="lazy"></li>
+        <li><img src="assets/books/book-8.jpg" alt="Book cover" loading="lazy"></li>
+      </ul>
+      <div class="readings__dots" role="tablist" aria-label="Choose a book"></div>
+    </section>
+
     <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <h2 class="contact__title">Good work starts with a good conversation. <em>Let's have one.</em></h2>
-      <div class="contact__actions">
-        
-        <button class="btn" id="copy-email" data-email="atienzamartinpaula@gmail.com">Copy email</button>
-        <a class="btn btn--ghost" href="https://www.linkedin.com/in/paulapam" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn btn--ghost" href="https://medium.com/@paulapam" target="_blank" rel="noopener">Medium ↗</a>
+    <section class="contact" id="contact">
+      <div class="contact__card">
+        <div class="contact__text">
+          <h2>Good work starts with a good conversation. Let's have one.</h2>
+          <div class="contact__actions">
+            <button class="copy" id="copy-email" data-email="atienzamartinpaula@gmail.com">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"/></svg>
+              <span class="copy__label">Copy email</span>
+            </button>
+            <a class="social" href="https://www.linkedin.com/in/paulapam" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/img/icon-linkedin.svg" alt="" width="48" height="48"></a>
+            <a class="social social--dark" href="https://medium.com/@paulapam" target="_blank" rel="noopener" aria-label="Medium"><img src="assets/img/icon-medium.svg" alt="" width="48" height="48"></a>
+          </div>
+        </div>
+        <div class="fridge" aria-label="Fridge with magnet letters you can drag">
+          <img class="fridge__body" src="assets/fridge/fridge.svg" alt="" width="318" height="252">
+          <div class="fridge__door" id="fridge">
+            <img class="fridge__handle" src="assets/fridge/handle.svg" alt="" width="23" height="106">
+            <img class="magnet" src="assets/fridge/letter-G.svg" alt="G" style="left:92px;top:25px;width:24px">
+            <img class="magnet" src="assets/fridge/letter-E.svg" alt="E" style="left:120px;top:22px;width:26px">
+            <img class="magnet" src="assets/fridge/letter-T1.svg" alt="T" style="left:155px;top:22px;width:24px">
+            <img class="magnet" src="assets/fridge/letter-I.svg" alt="I" style="left:206px;top:22px;width:13px">
+            <img class="magnet" src="assets/fridge/letter-N.svg" alt="N" style="left:226px;top:24px;width:24px">
+            <img class="magnet" src="assets/fridge/letter-T2.svg" alt="T" style="left:92px;top:94px;width:24px">
+            <img class="magnet" src="assets/fridge/letter-O.svg" alt="O" style="left:124px;top:94px;width:26px">
+            <img class="magnet" src="assets/fridge/letter-U.svg" alt="U" style="left:159px;top:92px;width:24px">
+            <img class="magnet" src="assets/fridge/letter-C.svg" alt="C" style="left:192px;top:94px;width:26px">
+            <img class="magnet" src="assets/fridge/letter-H.svg" alt="H" style="left:225px;top:94px;width:26px">
+          </div>
+          <p class="fridge__hint">Drag any fridge magnet letter ;)</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="fridge" id="fridge" aria-label="Fridge magnet letters you can drag">
-      <p class="fridge__hint">Drag any fridge magnet letter ;)</p>
-    </div>
-    <div class="footer__legal">
-      <p>© <span id="year">2026</span> | Paula Atienza</p>
-      <p>All trademarks and logos are the property of their respective owners. This website does not store cookies.</p>
-    </div>
+    <p class="footer__copy">© <span id="year">2026</span> | Paula Atienza</p>
+    <p class="footer__legal">All trademarks and logos are the property of their respective owners. This website does not store cookies.</p>
   </footer>
 
   <script src="script.js"></script>

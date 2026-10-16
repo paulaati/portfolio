@@ -1,8 +1,24 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Mobile menu
+const nav = document.querySelector(".nav");
+const toggle = document.querySelector(".nav__toggle");
+toggle.addEventListener("click", () => {
+  const open = nav.toggleAttribute("data-open");
+  toggle.setAttribute("aria-expanded", open);
+  toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+});
+nav.querySelectorAll(".nav__links a").forEach((a) =>
+  a.addEventListener("click", () => {
+    nav.removeAttribute("data-open");
+    toggle.setAttribute("aria-expanded", "false");
+  })
+);
+
 // Copy email button
 const copyBtn = document.getElementById("copy-email");
+const copyLabel = copyBtn.querySelector(".copy__label");
 copyBtn.addEventListener("click", async () => {
   const email = copyBtn.dataset.email;
   try {
@@ -11,75 +27,84 @@ copyBtn.addEventListener("click", async () => {
     window.location.href = `mailto:${email}`;
     return;
   }
-  copyBtn.textContent = "Copied!";
-  setTimeout(() => (copyBtn.textContent = "Copy email"), 2000);
+  copyLabel.textContent = "Copied!";
+  setTimeout(() => (copyLabel.textContent = "Copy email"), 2000);
 });
 
-// Curated readings carousel arrows
+// IKEA projects carousel (desktop): the arrow shows the next card
+const projects = [...document.querySelectorAll(".project")];
+let current = 0;
+projects[0].classList.add("is-active");
+document.querySelector(".projects__next").addEventListener("click", () => {
+  projects[current].classList.remove("is-active");
+  current = (current + 1) % projects.length;
+  projects[current].classList.add("is-active");
+});
+
+// Companies marquee: duplicate the logos so the loop is seamless
+const group = document.querySelector(".marquee__group");
+const copy = group.cloneNode(true);
+copy.setAttribute("aria-hidden", "true");
+copy.querySelectorAll("img").forEach((img) => (img.alt = ""));
+group.after(copy);
+
+// Curated readings: dots + autoplay
 const track = document.querySelector(".readings__track");
-document.querySelectorAll(".arrow").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const dir = Number(btn.dataset.dir);
-    track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: "smooth" });
-  });
+const books = [...track.children];
+const dots = document.querySelector(".readings__dots");
+books.forEach((_, i) => {
+  const b = document.createElement("button");
+  b.setAttribute("role", "tab");
+  b.setAttribute("aria-label", `Book ${i + 1}`);
+  b.addEventListener("click", () => goTo(i));
+  dots.appendChild(b);
 });
-
-// Fridge magnet letters (draggable)
-const fridge = document.getElementById("fridge");
-const colors = ["#e2462c", "#2b59c3", "#f2b705", "#1f8a5b", "#e86aa6", "#161514"];
-const word = "PAULA";
-
-function placeMagnets() {
-  fridge.querySelectorAll(".magnet").forEach((m) => m.remove());
-  const w = fridge.clientWidth;
-  const h = fridge.clientHeight;
-  const step = w / (word.length + 1);
-  [...word].forEach((ch, i) => {
-    const m = document.createElement("span");
-    m.className = "magnet";
-    m.textContent = ch;
-    m.setAttribute("aria-hidden", "true");
-    m.style.setProperty("--c", colors[i % colors.length]);
-    const rot = (Math.random() * 16 - 8).toFixed(1);
-    m.style.setProperty("--r", `${rot}deg`);
-    m.style.transform = `rotate(${rot}deg)`;
-    fridge.appendChild(m);
-    m.style.left = `${step * (i + 1) - m.offsetWidth / 2}px`;
-    m.style.top = `${h * 0.55 - m.offsetHeight / 2 + (Math.random() * 30 - 15)}px`;
-    makeDraggable(m);
-  });
+function goTo(i) {
+  const li = books[i];
+  track.scrollTo({ left: li.offsetLeft - (track.clientWidth - li.offsetWidth) / 2, behavior: "smooth" });
 }
+function activeIndex() {
+  const mid = track.scrollLeft + track.clientWidth / 2;
+  let best = 0;
+  books.forEach((li, i) => {
+    if (Math.abs(li.offsetLeft + li.offsetWidth / 2 - mid) < Math.abs(books[best].offsetLeft + books[best].offsetWidth / 2 - mid)) best = i;
+  });
+  return best;
+}
+function updateDots() {
+  const a = activeIndex();
+  [...dots.children].forEach((d, i) => d.setAttribute("aria-selected", i === a));
+}
+track.addEventListener("scroll", () => requestAnimationFrame(updateDots), { passive: true });
+updateDots();
+let autoplay = setInterval(() => goTo((activeIndex() + 1) % books.length), 3500);
+["pointerdown", "wheel", "focusin"].forEach((ev) =>
+  track.addEventListener(ev, () => clearInterval(autoplay), { passive: true })
+);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) clearInterval(autoplay);
 
-function makeDraggable(el) {
-  let startX, startY, origX, origY;
+// Fridge magnet letters (draggable inside the fridge door)
+const door = document.getElementById("fridge");
+door.querySelectorAll(".magnet").forEach((el) => {
+  let startX, startY, origX, origY, scale;
   el.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
     el.setPointerCapture(e.pointerId);
     el.classList.add("dragging");
-    el.style.transform = "";
+    scale = door.getBoundingClientRect().width / door.offsetWidth || 1;
     startX = e.clientX;
     startY = e.clientY;
     origX = el.offsetLeft;
     origY = el.offsetTop;
-    fridge.appendChild(el); // bring to front
   });
   el.addEventListener("pointermove", (e) => {
     if (!el.classList.contains("dragging")) return;
-    const maxX = fridge.clientWidth - el.offsetWidth;
-    const maxY = fridge.clientHeight - el.offsetHeight;
-    el.style.left = `${Math.min(Math.max(0, origX + e.clientX - startX), maxX)}px`;
-    el.style.top = `${Math.min(Math.max(0, origY + e.clientY - startY), maxY)}px`;
+    const maxX = door.clientWidth - el.offsetWidth;
+    const maxY = door.clientHeight - el.offsetHeight;
+    el.style.left = `${Math.min(Math.max(0, origX + (e.clientX - startX) / scale), maxX)}px`;
+    el.style.top = `${Math.min(Math.max(0, origY + (e.clientY - startY) / scale), maxY)}px`;
   });
-  const end = () => {
-    el.classList.remove("dragging");
-    el.style.transform = `rotate(${el.style.getPropertyValue("--r")})`;
-  };
+  const end = () => el.classList.remove("dragging");
   el.addEventListener("pointerup", end);
   el.addEventListener("pointercancel", end);
-}
-
-document.fonts.ready.then(placeMagnets);
-let resizeTimer;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(placeMagnets, 200);
 });
